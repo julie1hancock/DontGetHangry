@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry
+package hancock.julie.dontgethangry.models
 
 data class Restaurant (
     var name: String, //"Chick-fil-A"
