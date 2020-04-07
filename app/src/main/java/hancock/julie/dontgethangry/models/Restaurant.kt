@@ -10,4 +10,8 @@ data class Restaurant (
     var hours: String, //10am-8pm
     var website: String, //"www.chickfila.com"
     var rating: Double
-)
+) {
+    override fun toString(): String {
+        return name
+    }
+}

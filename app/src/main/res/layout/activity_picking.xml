@@ -9,11 +9,16 @@
     android:id="@+id/pickingLayout"
     >
 
+<!--    toolbar     -->
     <com.google.android.material.appbar.AppBarLayout
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clickableLayout"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,13 +29,163 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include
+
+
+
+
+
+
+<!--    entire clickable layout     -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clickableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar"
+
+        >
+    <!--LEFT RIGHT LAYOUT-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/leftRightLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:background="@color/orange"
+        >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/left"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/green"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/right"
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/red"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/left"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+
+            app:layout_constraintTop_toBottomOf="@id/leftRightLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    middle component    -->
+    <TextView
+        android:id="@+id/restName"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        layout="@layout/content_picking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="test"
+        android:background="@color/purple"
+        android:padding="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+
+<!--    miles left-->
+
+    <TextView
+        android:id="@+id/milesLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="helloooooooooooooooooo"
+        android:background="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         />
+
+
+<!--    bottom view     -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:visibility="gone"
+        android:background="@color/pink"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:text="wertyuikol"
+            tools:text="Fast food $"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomTypeAndPrice"
+            />
+        <TextView
+            tools:text="Address!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomAddress"
+            />
+        <TextView
+            tools:text="1.2 miles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomMiles"
+            />
+        <TextView
+            tools:text="9am-9pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomHours"
+            />
+        <TextView
+            tools:text="Website: www.edrgyuiol.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomWebsite"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

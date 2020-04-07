@@ -2,23 +2,26 @@ package hancock.julie.dontgethangry.models
 
 object Singleton {
 
-    var allRestaurants = setup()
     var theyPicked = mutableListOf<Restaurant>()
     var theyRejected = mutableListOf<Restaurant>()
+    var allRestaurants = setup()
+
+    var youPicked = mutableListOf<Restaurant>()
+    var youRejected = mutableListOf<Restaurant>()
 
 
     private fun setup(): MutableList<Restaurant> {
         val spicy = getSpicyThai()
+        val zupas = getZupas()
         val jDawgs = getJDawgs()
         val costaVida = getCostaVida()
         val chickFilA = getChickFilA()
         val station22 = getStation22()
         val waffleLove = getWaffleLove()
-        val slabPizza = getSlabPizza()
-        val zupas = getZupas()
         val tucanos = getTucanos()
         val rodizioGrill = getRodizioGrill()
         val laJollaGroves = getLaJollaGroves()
+        val slabPizza = getSlabPizza()
         val fatDaddys = getFatDaddys()
 
         theyPicked.add(chickFilA)
@@ -36,21 +39,21 @@ object Singleton {
         theyRejected.add(fatDaddys)
 
 
-
         val list = mutableListOf<Restaurant>()
-        list.add(spicy)
-        list.add(jDawgs)
-        list.add(costaVida)
-        list.add(chickFilA)
-        list.add(station22)
-        list.add(waffleLove)
-        list.add(slabPizza)
-        list.add(zupas)
-        list.add(tucanos)
-        list.add(rodizioGrill)
-        list.add(laJollaGroves)
-        list.add(fatDaddys)
+        list.add(tucanos) //9
+        list.add(spicy) //1
+        list.add(chickFilA) //4
+        list.add(fatDaddys) //12
+        list.add(costaVida) //3
+        list.add(rodizioGrill) //10
+        list.add(station22) //5
+        list.add(slabPizza) //7
+        list.add(zupas) //8
+        list.add(waffleLove) //6
+        list.add(laJollaGroves) //11
+        list.add(jDawgs) //2
         return list
+
     }
 
     private fun getFatDaddys() = Restaurant(
@@ -174,14 +177,12 @@ object Singleton {
         rating = 4.4
     )
 
-    var youPicked = mutableListOf<Restaurant>()
-    var youRejected = mutableListOf<Restaurant>()
 
-    public fun addPicked(r: Restaurant){
+    fun addPicked(r: Restaurant){
         youPicked.add(r)
     }
 
-    public fun addRejection(r: Restaurant){
+    fun addRejected(r: Restaurant){
         youRejected.add(r)
     }
 
