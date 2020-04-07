@@ -12,11 +12,14 @@
         <activity
             android:name=".views.PickingActivity"
             android:label="@string/title_activity_picking"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".views.EndActivity"
+            android:label="@string/title_activity_picking"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

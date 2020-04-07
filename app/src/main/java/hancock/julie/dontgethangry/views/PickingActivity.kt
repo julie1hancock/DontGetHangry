@@ -1,6 +1,7 @@
 package hancock.julie.dontgethangry.views
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -34,13 +35,11 @@ class PickingActivity : AppCompatActivity() {
             false
         }
         right.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
-//            Toast.makeText(this, "R", Toast.LENGTH_SHORT).show()
             presenter.rightClicked()
             updateView()
             false
         }
         bottom.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
-//            Toast.makeText(this, "B", Toast.LENGTH_SHORT).show()
             presenter.bottomClicked()
             updateBottom()
             false
@@ -68,9 +67,8 @@ class PickingActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun showEndScreen() {
-        Toast.makeText(this, "todo: next screen!", Toast.LENGTH_SHORT).show()
-        restName.text = "You picked: ${Singleton.youPicked}"
-        milesLeft.text = "You rejected: ${Singleton.youRejected}"
+        startActivity(Intent(this, EndActivity::class.java))
+        finish()
     }
 
     var bottomIsVisible = false

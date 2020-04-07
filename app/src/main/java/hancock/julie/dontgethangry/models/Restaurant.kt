@@ -11,7 +11,9 @@ data class Restaurant (
     var website: String, //"www.chickfila.com"
     var rating: Double
 ) {
+
     override fun toString(): String {
         return name
     }
+
 }
