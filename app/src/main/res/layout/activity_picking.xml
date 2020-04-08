@@ -127,20 +127,11 @@
             app:cardCornerRadius="150dp"
             >
             <ImageView
-
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:id="@+id/restIcon"
                 android:scaleType="centerCrop"
                 />
-<!--            <ImageView-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/restIcon"-->
-<!--                />-->
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/restName"

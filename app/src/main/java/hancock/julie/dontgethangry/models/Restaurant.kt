@@ -2,7 +2,7 @@ package hancock.julie.dontgethangry.models
 
 data class Restaurant (
     var name: String, //"Chick-fil-A"
-//    var image: String,
+    var image: Int,
     var type: String, //"Fast Food"
     var price: String, //"$"
     var address: String, //"484 W Bulldog Ln"

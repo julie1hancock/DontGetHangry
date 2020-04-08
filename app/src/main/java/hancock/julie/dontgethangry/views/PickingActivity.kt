@@ -56,7 +56,9 @@ class PickingActivity : AppCompatActivity() {
             return
         }
 
-        restIcon.setImageResource(R.drawable.chickfilalogo)
+        restIcon.setImageResource(toDisplay?.image!!)
+
+//            R.drawable.chickfilalogo)
 
 //        restIcon.setImageResource()
 //        val bitmap = BitmapFactory.decodeFile("~/Downloads/chickfilalogo.jpg")

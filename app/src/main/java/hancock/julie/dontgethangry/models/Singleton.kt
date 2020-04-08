@@ -1,5 +1,7 @@
 package hancock.julie.dontgethangry.models
 
+import hancock.julie.dontgethangry.R
+
 object Singleton {
 
     var theyPicked = mutableListOf<Restaurant>()
@@ -22,7 +24,6 @@ object Singleton {
         val rodizioGrill = getRodizioGrill()
         val laJollaGroves = getLaJollaGroves()
         val slabPizza = getSlabPizza()
-        val fatDaddys = getFatDaddys()
 
 //        theyPicked.add(chickFilA)
         theyPicked.add(waffleLove)
@@ -36,14 +37,12 @@ object Singleton {
         theyPicked.add(tucanos)
         theyPicked.add(rodizioGrill)
         theyPicked.add(laJollaGroves)
-        theyPicked.add(fatDaddys)
 
 
         val list = mutableListOf<Restaurant>()
         list.add(tucanos) //9
         list.add(spicy) //1
         list.add(chickFilA) //4
-        list.add(fatDaddys) //12
         list.add(costaVida) //3
         list.add(rodizioGrill) //10
         list.add(station22) //5
@@ -56,16 +55,6 @@ object Singleton {
 
     }
 
-    private fun getFatDaddys() = Restaurant(
-        name = "Fat Daddy's Pizza",
-        type = "Pizza restaurant",
-        price = "$$$",
-        address = "1528 N Freedom Blvd, Provo, UT 84604",
-        milesAway = 1.8,
-        hours = "11:30am-10pm",
-        website = "www.fatdaddyspizzeria.com",
-        rating = 4.8
-    )
     private fun getLaJollaGroves() = Restaurant(
         name = "La Jolla Groves",
         type = "New American restaurant",
@@ -74,7 +63,8 @@ object Singleton {
         milesAway = 4.7,
         hours = "11am-8pm",
         website = "www.lajollagroves.com",
-        rating = 4.1
+        rating = 4.1,
+        image = R.drawable.lajollalogo
     )
     private fun getRodizioGrill() = Restaurant(
         name = "Rodizio Grill",
@@ -84,7 +74,8 @@ object Singleton {
         milesAway = 4.5,
         hours = "11:30am-9pm",
         website = "www.rodiziogrill.com",
-        rating = 4.4
+        rating = 4.4,
+        image = R.drawable.rodiziogrilllogo
     )
     private fun getTucanos() = Restaurant(
         name = "Tucanos Brazilian Grill",
@@ -94,7 +85,8 @@ object Singleton {
         milesAway = 3.8,
         hours = "11am-11pm",
         website = "www.tucanos.com",
-        rating = 4.6
+        rating = 4.6,
+        image = R.drawable.tucanoslogo
     )
     private fun getZupas() = Restaurant(
         name = "Café Zupas",
@@ -104,7 +96,8 @@ object Singleton {
         milesAway = 2.5,
         hours = "11am-9pm",
         website = "www.cafezupas.com",
-        rating = 4.3
+        rating = 4.3,
+        image = R.drawable.zupaslogo
     )
     private fun getSlabPizza() = Restaurant(
         name = "SLABPizza",
@@ -114,7 +107,8 @@ object Singleton {
         milesAway = .4,
         hours = "11am-11pm",
         website = "www.slabpizza.com",
-        rating = 4.6
+        rating = 4.6,
+        image = R.drawable.slabpizzalogo
     )
     private fun getWaffleLove() = Restaurant(
         name = "Waffle Love",
@@ -124,7 +118,8 @@ object Singleton {
         milesAway = 2.6,
         hours = "9am-8pm",
         website = "www.waffluv.com",
-        rating = 4.5
+        rating = 4.5,
+        image = R.drawable.wafflelovelogo
     )
     private fun getStation22() = Restaurant(
         name = "Station 22",
@@ -134,7 +129,8 @@ object Singleton {
         milesAway = 1.8,
         hours = "11am-10pm",
         website = "www.station22cafe.com",
-        rating = 4.1
+        rating = 4.1,
+        image = R.drawable.station22logo
     )
     private fun getChickFilA() = Restaurant(
         name = "Chick-fil-A",
@@ -144,7 +140,8 @@ object Singleton {
         milesAway = 1.9,
         hours = "6:30am-10pm",
         website = "www.chick-fil-a.com",
-        rating = 4.5
+        rating = 4.5,
+        image = R.drawable.chickfilalogo
     )
     private fun getCostaVida() = Restaurant(
         name = "Costa Vida",
@@ -154,7 +151,8 @@ object Singleton {
         milesAway = 1.4,
         hours = "10:30am-10pm",
         website = "www.costavida.com",
-        rating = 4.4
+        rating = 4.4,
+        image = R.drawable.costavidalogo
     )
     private fun getJDawgs() = Restaurant(
         name = "J Dawgs",
@@ -164,7 +162,8 @@ object Singleton {
         milesAway = 0.6,
         hours = "11am-7pm",
         website = "www.jdawgs.com",
-        rating = 4.7
+        rating = 4.7,
+        image = R.drawable.jdawgslogo
     )
     private fun getSpicyThai() = Restaurant(
         name = "Spicy Thai",
@@ -174,7 +173,8 @@ object Singleton {
         milesAway = 2.9,
         hours = "11am-9:30pm",
         website = "www.spicythaiprovo.com",
-        rating = 4.4
+        rating = 4.4,
+        image = R.drawable.spicythailogo
     )
 
 
