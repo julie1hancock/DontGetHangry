@@ -57,20 +57,15 @@ class PickingActivity : AppCompatActivity() {
         }
 
         restIcon.setImageResource(toDisplay?.image!!)
-
-//            R.drawable.chickfilalogo)
-
-//        restIcon.setImageResource()
-//        val bitmap = BitmapFactory.decodeFile("~/Downloads/chickfilalogo.jpg")
-//        restIcon.setImageBitmap(bitmap)
-        milesLeft.text = "${toDisplay?.milesAway ?: "!!"} miles"
+        milesLeft.text = "${toDisplay?.milesAway ?: "!!"} miles away"
         restName.text = toDisplay?.name ?: "!!"
 
         bottomTypeAndPrice.text = "${toDisplay?.type ?: "!!"} ${toDisplay?.price ?: "!!"}"
         bottomAddress.text = "Address: ${toDisplay?.address ?: "!!"}"
         bottomMiles.text = "${toDisplay?.milesAway ?: "!!"} miles away"
         bottomHours.text = "Hours: ${toDisplay?.hours ?: "!!"}"
-        bottomWebsite.text = "Website: ${toDisplay?.website ?: "!!"}"
+        bottomWebsite.text = toDisplay?.website ?: "!!"
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -82,10 +77,17 @@ class PickingActivity : AppCompatActivity() {
     var bottomIsVisible = false
     private fun updateBottom() {
         bottomIsVisible = !bottomIsVisible
-        if(bottomIsVisible)
+        if(bottomIsVisible){
             bottomLayout.visibility = View.VISIBLE
-        else
+            middleView.setPadding(0,0,0,450)
+            milesLeft.visibility = View.GONE
+        }
+        else{
             bottomLayout.visibility = View.GONE
+            middleView.setPadding(0,0,0,0)
+
+            milesLeft.visibility = View.VISIBLE
+        }
 
     }
 
