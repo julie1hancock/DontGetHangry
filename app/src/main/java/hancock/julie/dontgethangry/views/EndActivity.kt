@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.models.Restaurant
@@ -21,9 +23,10 @@ import kotlinx.android.synthetic.main.rest_view.view.*
 
 class EndActivity : AppCompatActivity() {
 
-    lateinit var presenter: EndPresenter
-//    lateinit var linearLayoutManager: LinearLayoutManager
-    lateinit var gridLayoutManager: GridLayoutManager
+    private lateinit var presenter: EndPresenter
+
+    private lateinit var gridLayoutManager: GridLayoutManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_end)
@@ -63,7 +66,6 @@ class EndActivity : AppCompatActivity() {
         losingLayout.visibility = View.GONE
 
         gridLayoutManager = GridLayoutManager(this,3)
-//        linearLayoutManager = LinearLayoutManager(this)
         winningRV.layoutManager = gridLayoutManager
 
         winningRV.adapter = EndAdapter(presenter.overlappingRests, this)
@@ -87,7 +89,7 @@ class EndActivity : AppCompatActivity() {
 
 }
 
-class EndAdapter(private val rests: List<Restaurant>, val context: Context) :
+class EndAdapter(private val rests: List<Restaurant>, private val context: Context) :
     RecyclerView.Adapter<EndAdapter.EndHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EndHolder {
@@ -105,8 +107,8 @@ class EndAdapter(private val rests: List<Restaurant>, val context: Context) :
     }
 
     class EndHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val name = v.endRestName
-        val icon = v.endRestIcon
-        val root = v.endRoot
+        val name: TextView = v.endRestName
+        val icon: ImageView = v.endRestIcon
+        val root: ConstraintLayout = v.endRoot
     }
 }

@@ -2,18 +2,19 @@ package hancock.julie.dontgethangry.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.presenters.PickingPresenter
 import kotlinx.android.synthetic.main.activity_picking.*
-import kotlinx.android.synthetic.main.content_picking.*
+import java.util.*
+import kotlin.concurrent.schedule
 
 class PickingActivity : AppCompatActivity() {
 
@@ -32,11 +33,13 @@ class PickingActivity : AppCompatActivity() {
     private fun setupListening() {
         left.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
             presenter.leftClicked()
+            flash(true)
             updateView()
             false
         }
         right.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
             presenter.rightClicked()
+            flash(false)
             updateView()
             false
         }
@@ -47,6 +50,35 @@ class PickingActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun flash(isGreen: Boolean) {
+        val AIsVisible = clickableLayout.isVisible
+        val BIsVisible = middleView.isVisible
+        val CIsVisible = milesLeft.isVisible
+        val DIsVisible = bottomLayout.isVisible
+
+        clickableLayout.setVisibleOrGone(false)
+        middleView.setVisibleOrGone(false)
+        milesLeft.setVisibleOrGone(false)
+        bottomLayout.setVisibleOrGone(false)
+
+        if(isGreen)
+            colorLayout.setBackgroundColor(resources.getColor(R.color.mutedGreen))
+        else
+            colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
+        colorLayout.setVisibleOrGone(true)
+
+        Run.after(400) {
+            colorLayout.setVisibleOrGone(false)
+            clickableLayout.setVisibleOrGone(AIsVisible)
+            middleView.setVisibleOrGone(BIsVisible)
+            milesLeft.setVisibleOrGone(CIsVisible)
+            bottomLayout.setVisibleOrGone(DIsVisible)
+        }
+
+
+    }
+
 
     @SuppressLint("SetTextI18n")
     private fun updateView() {
@@ -91,4 +123,20 @@ class PickingActivity : AppCompatActivity() {
 
     }
 
+}
+
+private fun View.setVisibleOrGone(b: Boolean) {
+    this.visibility = if(b) View.VISIBLE
+    else View.GONE
+}
+
+
+class Run {
+    companion object {
+        fun after(delay: Long, process: () -> Unit) {
+            Handler().postDelayed({
+                process()
+            }, delay)
+        }
+    }
 }
