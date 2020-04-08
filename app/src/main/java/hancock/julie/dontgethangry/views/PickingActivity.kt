@@ -2,6 +2,7 @@ package hancock.julie.dontgethangry.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -55,6 +56,11 @@ class PickingActivity : AppCompatActivity() {
             return
         }
 
+        restIcon.setImageResource(R.drawable.chickfilalogo)
+
+//        restIcon.setImageResource()
+//        val bitmap = BitmapFactory.decodeFile("~/Downloads/chickfilalogo.jpg")
+//        restIcon.setImageBitmap(bitmap)
         milesLeft.text = "${toDisplay?.milesAway ?: "!!"} miles"
         restName.text = toDisplay?.name ?: "!!"
 
