@@ -68,7 +68,7 @@ class PickingActivity : AppCompatActivity() {
             colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
         colorLayout.setVisibleOrGone(true)
 
-        Run.after(400) {
+        Run.after(250) {
             colorLayout.setVisibleOrGone(false)
             clickableLayout.setVisibleOrGone(AIsVisible)
             middleView.setVisibleOrGone(BIsVisible)

@@ -16,15 +16,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
-
         app:layout_constraintTop_toTopOf="parent"
         >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/midDarkBlue"
-            app:titleTextColor="@color/darkBlue"
+            android:background="@color/middleBlue"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -37,12 +35,22 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     style="@style/header"
-
+                    android:textColor="@color/midDarkBlue"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+
+
+
+
+
 
 <!--    winning     -->
     <LinearLayout
@@ -66,6 +74,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/grayBlue"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
@@ -102,7 +111,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/midLightBlue"
+            android:background="@color/line"
             />
 
         <LinearLayout
@@ -120,7 +129,7 @@
                     style="@style/titleTextSmall"
                     android:padding="8dp"
                     android:textSize="16dp"
-                    android:text="You picked"
+                    android:text="You picked: "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
@@ -133,7 +142,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="@color/midLightBlue"
+                android:background="@color/line"
                 />
         </LinearLayout>
         <LinearLayout
@@ -152,7 +161,7 @@
                     style="@style/titleTextSmall"
                     android:padding="8dp"
                     android:textSize="16dp"
-                    android:text="They picked"
+                    android:text="They picked: "
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
@@ -218,7 +227,7 @@
             android:id="@+id/viewLose"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/midLightBlue"
+            android:background="@color/line"
             />
         <TextView
             app:layout_constraintTop_toTopOf="parent"
@@ -229,6 +238,7 @@
             android:id="@+id/bottomTextLose"
             />
         <Button
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bottomTextLose"

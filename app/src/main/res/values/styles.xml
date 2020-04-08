@@ -22,7 +22,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16dp</item>
-        <item name="android:textColor">@color/darkBlue</item>
+        <item name="android:textColor">@color/midDarkBlue</item>
         <item name="android:padding">8dp</item>
     </style>
 
@@ -32,7 +32,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">32dp</item>
-        <item name="android:textColor">@color/darkBlue</item>
+        <item name="android:textColor">@color/grayBlue</item>
     </style>
 
     <style name="titleText" parent="header">
@@ -50,7 +50,7 @@
         <item name="android:layout_marginBottom">110dp</item>
         <item name="android:background">@drawable/btn</item>
         <item name="android:padding">16dp</item>
-        <item name="android:textColor">@color/lightBlue</item>
+        <item name="android:textColor">@color/offwhite</item>
         <item name="android:text">Start Over</item>
     </style>
 
@@ -60,6 +60,8 @@
         <item name="android:textSize">16dp</item>
         <item name="android:text">"Click logo to navigate"</item>
         <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/grayBlue</item>
+        <item name="android:visibility">gone</item>
     </style>
 
 </resources>
