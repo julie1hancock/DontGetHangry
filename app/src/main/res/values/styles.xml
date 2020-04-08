@@ -36,9 +36,30 @@
     </style>
 
     <style name="titleText" parent="header">
-        <item name="android:textSize">32dp</item>
         <item name="android:textColor">@color/midDarkBlue</item>
     </style>
 
+    <style name="titleTextSmall" parent="titleText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/midDarkBlue</item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">110dp</item>
+        <item name="android:background">@drawable/btn</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/lightBlue</item>
+        <item name="android:text">Start Over</item>
+    </style>
+
+    <style name="bottomView" parent="titleTextSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:text">"Click logo to navigate"</item>
+        <item name="android:padding">16dp</item>
+    </style>
 
 </resources>
