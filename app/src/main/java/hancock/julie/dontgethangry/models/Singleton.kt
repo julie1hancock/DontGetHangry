@@ -25,18 +25,18 @@ object Singleton {
         val laJollaGroves = getLaJollaGroves()
         val slabPizza = getSlabPizza()
 
-//        theyPicked.add(chickFilA)
-        theyPicked.add(waffleLove)
-
+        
         theyPicked.add(spicy)
-        theyPicked.add(jDawgs)
-        theyPicked.add(costaVida)
-        theyPicked.add(station22)
-        theyPicked.add(slabPizza)
         theyPicked.add(zupas)
-        theyPicked.add(tucanos)
+        theyPicked.add(jDawgs)
+//        theyPicked.add(costaVida)
+//        theyPicked.add(chickFilA)
+        theyPicked.add(station22)
+//        theyPicked.add(waffleLove)
+//        theyPicked.add(tucanos)
         theyPicked.add(rodizioGrill)
         theyPicked.add(laJollaGroves)
+        theyPicked.add(slabPizza)
 
 
         val list = mutableListOf<Restaurant>()
