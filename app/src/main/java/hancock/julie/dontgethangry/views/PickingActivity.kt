@@ -56,11 +56,15 @@ class PickingActivity : AppCompatActivity() {
         val BIsVisible = middleView.isVisible
         val CIsVisible = milesLeft.isVisible
         val DIsVisible = bottomLayout.isVisible
+        val EIsVisible = checkXLayoutGuy.isVisible
+        val FIsVisible = infoCardView.isVisible
 
         clickableLayout.setVisibleOrGone(false)
         middleView.setVisibleOrGone(false)
         milesLeft.setVisibleOrGone(false)
         bottomLayout.setVisibleOrGone(false)
+        checkXLayoutGuy.setVisibleOrGone(false)
+        infoCardView.setVisibleOrGone(false)
 
         if(isGreen)
             colorLayout.setBackgroundColor(resources.getColor(R.color.mutedGreen))
@@ -68,15 +72,15 @@ class PickingActivity : AppCompatActivity() {
             colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
         colorLayout.setVisibleOrGone(true)
 
-        Run.after(250) {
+        Run.after(350) {
             colorLayout.setVisibleOrGone(false)
             clickableLayout.setVisibleOrGone(AIsVisible)
             middleView.setVisibleOrGone(BIsVisible)
             milesLeft.setVisibleOrGone(CIsVisible)
             bottomLayout.setVisibleOrGone(DIsVisible)
+            checkXLayoutGuy.setVisibleOrGone(EIsVisible)
+            infoCardView.setVisibleOrGone(FIsVisible)
         }
-
-
     }
 
 
@@ -110,11 +114,14 @@ class PickingActivity : AppCompatActivity() {
     private fun updateBottom() {
         bottomIsVisible = !bottomIsVisible
         if(bottomIsVisible){
+            infoCardView.visibility = View.GONE
             bottomLayout.visibility = View.VISIBLE
             middleView.setPadding(0,0,0,450)
             milesLeft.visibility = View.GONE
         }
         else{
+            infoCardView.visibility = View.VISIBLE
+
             bottomLayout.visibility = View.GONE
             middleView.setPadding(0,0,0,0)
 

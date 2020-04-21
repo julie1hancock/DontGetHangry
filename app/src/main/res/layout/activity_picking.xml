@@ -27,24 +27,64 @@
             android:background="@color/middleBlue"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/toolbarTitle"
-                android:text="Don't Get Hangry"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                style="@style/header"
-                android:textColor="@color/midDarkBlue"
-                />
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:text="Don't Get Hangry"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/thisguy"
+                    style="@style/headerButSlightlySmaller"
+                    android:textColor="@color/midDarkBlue"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    style="@style/bottomTextButSlightlySmaller"
+                    android:id="@+id/thisguy"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbarTitle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Keep on tappin'!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:id="@+id/toolbarTitle"-->
+<!--                android:text="Don't Get Hangry"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                style="@style/header"-->
+<!--                android:textColor="@color/midDarkBlue"-->
+<!--                />-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--    just info icon-->
+            <!--    <ImageView-->
+            <!--        android:src="@drawable/ic_info_foreground"-->
+            <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        android:layout_width="80dp"-->
+            <!--        android:layout_height="80dp"-->
+            <!--        android:id="@+id/infoIcon"-->
+            <!--        android:tint="@color/middleBlue"-->
+            <!--        />-->
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+
+
 
 
 
@@ -78,7 +118,6 @@
         >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/left"
-
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -90,7 +129,6 @@
                 android:id="@+id/right"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/left"
@@ -154,19 +192,57 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-<!--    miles left-->
-    <TextView
-        tools:text="7.2 miles away"
-        android:textColor="@color/midDarkBlue"
-        android:textSize="20dp"
-        android:id="@+id/milesLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="16dp"
-        />
 
+
+
+<!--    check and x images layout guy-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkXLayoutGuy"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:elevation="12dp"
+            android:id="@+id/checkCardView"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/mutedGreen"
+            >
+            <ImageView
+                android:src="@drawable/ic_check_mark_foreground"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/checkMark"
+                android:scaleType="centerCrop"
+                android:tint="@color/darkerGreen"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/xCardView"
+            app:cardCornerRadius="40dp"
+            app:cardBackgroundColor="@color/mutedRed"
+            >
+            <ImageView
+                android:src="@drawable/ic_x_mark_foreground"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/xMark"
+                android:scaleType="centerCrop"
+                android:tint="@color/darkerRed"
+                />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--    bottom view     -->
     <LinearLayout
@@ -217,6 +293,51 @@
         </LinearLayout>
     </LinearLayout>
 
+<!--    miles left-->
+<TextView
+        tools:text="7.2 miles away"
+        android:textColor="@color/midDarkBlue"
+        android:textSize="20dp"
+        android:id="@+id/milesLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"
+        />
+<!--    info indicator guy-->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="12dp"
+        android:id="@+id/infoCardView"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/midLightBlue"
+        >
+        <ImageView
+            android:src="@drawable/ic_info_foreground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/infoIcon"
+            android:scaleType="centerCrop"
+            android:tint="@color/midDarkBlue"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    just info icon-->
+<!--    <ImageView-->
+<!--        android:src="@drawable/ic_info_foreground"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:id="@+id/infoIcon"-->
+<!--        android:tint="@color/middleBlue"-->
+<!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

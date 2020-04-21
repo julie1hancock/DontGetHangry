@@ -16,10 +16,13 @@
     <color name="offwhite">#eeeeee</color>
 
     <color name="mutedGreen">#8fde8f</color>
-    <color name="mutedRed">#df8181</color>
+    <color name="mutedRed">#ffb2b2</color>
 
 
     <color name="verypink">#ff00ff</color>
+
+    <color name="darkerGreen">#395839</color>
+    <color name="darkerRed">#ff1919</color>
 
 
 

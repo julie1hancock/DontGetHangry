@@ -17,7 +17,7 @@ class InstructionActivity : AppCompatActivity() {
 
         }
         entireInstructionScreen.setOnClickListener{
-            Toast.makeText(this, "This screen is not meant for clicking.\nHit the arrow if you're ready to get tappin'!" , Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "This screen is not meant for clicking.\nHit the bottom right arrow if you're ready to get tappin'!" , Toast.LENGTH_LONG).show()
         }
     }
 }
