@@ -53,39 +53,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
+
+
+                <androidx.cardview.widget.CardView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+
+                    android:id="@+id/undoCardView"
+                    app:cardCornerRadius="0dp"
+                    app:cardBackgroundColor="@color/midLightBlue"
+                    >
+                    <ImageView
+                        android:src="@drawable/ic_undo_foreground"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:id="@+id/undoIcon"
+                        android:scaleType="centerCrop"
+                        android:tint="@color/midDarkBlue"
+                        />
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            <TextView-->
-<!--                android:id="@+id/toolbarTitle"-->
-<!--                android:text="Don't Get Hangry"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                style="@style/header"-->
-<!--                android:textColor="@color/midDarkBlue"-->
-<!--                />-->
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-    <!--    just info icon-->
-            <!--    <ImageView-->
-            <!--        android:src="@drawable/ic_info_foreground"-->
-            <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--        app:layout_constraintEnd_toEndOf="parent"-->
-            <!--        android:layout_width="80dp"-->
-            <!--        android:layout_height="80dp"-->
-            <!--        android:id="@+id/infoIcon"-->
-            <!--        android:tint="@color/middleBlue"-->
-            <!--        />-->
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-
-
-
 
 
 <!--    color flash layout    -->
@@ -326,18 +322,6 @@
             android:tint="@color/midDarkBlue"
             />
     </androidx.cardview.widget.CardView>
-
-
-    <!--    just info icon-->
-<!--    <ImageView-->
-<!--        android:src="@drawable/ic_info_foreground"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_width="80dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:id="@+id/infoIcon"-->
-<!--        android:tint="@color/middleBlue"-->
-<!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

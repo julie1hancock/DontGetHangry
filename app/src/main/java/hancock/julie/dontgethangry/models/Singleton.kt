@@ -186,4 +186,13 @@ object Singleton {
         youRejected.add(r)
     }
 
+    fun removePicked(restToDisplay: Restaurant?) {
+
+    }
+
+    fun removeRejected(restToDisplay: Restaurant?) {
+
+
+    }
+
 }

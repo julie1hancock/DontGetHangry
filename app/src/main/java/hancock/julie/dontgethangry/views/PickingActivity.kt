@@ -13,8 +13,6 @@ import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.presenters.PickingPresenter
 import kotlinx.android.synthetic.main.activity_picking.*
-import java.util.*
-import kotlin.concurrent.schedule
 
 class PickingActivity : AppCompatActivity() {
 
@@ -44,14 +42,20 @@ class PickingActivity : AppCompatActivity() {
             false
         }
         bottom.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
-            presenter.bottomClicked()
             updateBottom()
+            false
+        }
+
+        undoCardView.setOnClickListener{
+            presenter.undoClicked()
+            flash(null)
+            updateView()
             false
         }
 
     }
 
-    private fun flash(isGreen: Boolean) {
+    private fun flash(isGreen: Boolean?) {
         val AIsVisible = clickableLayout.isVisible
         val BIsVisible = middleView.isVisible
         val CIsVisible = milesLeft.isVisible
@@ -66,10 +70,11 @@ class PickingActivity : AppCompatActivity() {
         checkXLayoutGuy.setVisibleOrGone(false)
         infoCardView.setVisibleOrGone(false)
 
-        if(isGreen)
-            colorLayout.setBackgroundColor(resources.getColor(R.color.mutedGreen))
-        else
-            colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
+        when {
+            isGreen == null -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedYellow))
+            isGreen -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedGreen))
+            else -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
+        }
         colorLayout.setVisibleOrGone(true)
 
         Run.after(350) {
@@ -83,9 +88,9 @@ class PickingActivity : AppCompatActivity() {
         }
     }
 
-
     @SuppressLint("SetTextI18n")
     private fun updateView() {
+        undoCardView.setVisibleOrGone(presenter.showUndo())
         toDisplay = presenter.getRestToDisplay()
         if(toDisplay == null) {
             showEndScreen()
@@ -136,7 +141,6 @@ private fun View.setVisibleOrGone(b: Boolean) {
     this.visibility = if(b) View.VISIBLE
     else View.GONE
 }
-
 
 class Run {
     companion object {

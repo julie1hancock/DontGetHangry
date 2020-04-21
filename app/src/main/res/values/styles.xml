@@ -17,7 +17,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
+undo
     <style name="bottomText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -29,6 +29,10 @@
     <style name="bottomTextButSlightlySmaller" parent="bottomText">
         <item name="android:textSize">14dp</item>
         <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="bottomTextButEvenSmaller" parent="bottomTextButSlightlySmaller">
+        <item name="android:textSize">10dp</item>
     </style>
 
 
