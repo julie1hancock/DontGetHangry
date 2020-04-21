@@ -92,10 +92,10 @@ undo
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16dp</item>
-        <item name="android:text">"Click logo to navigate"</item>
+        <item name="android:text">"Click above logo to launch navigation"</item>
         <item name="android:padding">16dp</item>
         <item name="android:textColor">@color/grayBlue</item>
-        <item name="android:visibility">gone</item>
+        <item name="android:visibility">visible</item>
     </style>
 
 </resources>

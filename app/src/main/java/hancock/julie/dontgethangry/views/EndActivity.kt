@@ -20,6 +20,8 @@ import hancock.julie.dontgethangry.presenters.EndPresenter
 import kotlinx.android.synthetic.main.activity_end.*
 import kotlinx.android.synthetic.main.activity_picking.toolbar
 import kotlinx.android.synthetic.main.rest_view.view.*
+import android.net.Uri
+
 
 class EndActivity : AppCompatActivity() {
 
@@ -102,9 +104,19 @@ class EndAdapter(private val rests: List<Restaurant>, private val context: Conte
         holder.name.text = rests[position].name
         holder.icon.setImageResource(rests[position].image)
         holder.root.setOnClickListener {
-            Toast.makeText(context, rests[position].address, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, rests[position].address, Toast.LENGTH_SHORT).show()
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=${createPostfix(rests[position].address)}"))
+            context.startActivity(intent)
         }
     }
+
+    private fun createPostfix(address: String) =
+        address
+            .replace(",","")
+            .replace("\\w+"," ")
+            .split(" ")
+            .joinToString("+")
+
 
     class EndHolder(v: View) : RecyclerView.ViewHolder(v) {
         val name: TextView = v.endRestName

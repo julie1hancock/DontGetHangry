@@ -88,7 +88,7 @@ class PickingActivity : AppCompatActivity() {
         }
         colorLayout.setVisibleOrGone(true)
 
-        Run.after(350) {
+        Run.after(250) {
             colorLayout.setVisibleOrGone(false)
             clickableLayout.setVisibleOrGone(AIsVisible)
             middleView.setVisibleOrGone(BIsVisible)

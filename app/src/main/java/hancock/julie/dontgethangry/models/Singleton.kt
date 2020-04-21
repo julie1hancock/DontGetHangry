@@ -5,7 +5,6 @@ import hancock.julie.dontgethangry.R
 object Singleton {
 
     var theyPicked = mutableListOf<Restaurant>()
-    var theyRejected = mutableListOf<Restaurant>()
     var allRestaurants = setup()
 
     var youPicked = mutableListOf<Restaurant>()
@@ -29,11 +28,11 @@ object Singleton {
         theyPicked.add(spicy)
         theyPicked.add(zupas)
         theyPicked.add(jDawgs)
-//        theyPicked.add(costaVida)
-//        theyPicked.add(chickFilA)
+        theyPicked.add(costaVida)
+        theyPicked.add(chickFilA)
         theyPicked.add(station22)
-//        theyPicked.add(waffleLove)
-//        theyPicked.add(tucanos)
+        theyPicked.add(waffleLove)
+        theyPicked.add(tucanos)
         theyPicked.add(rodizioGrill)
         theyPicked.add(laJollaGroves)
         theyPicked.add(slabPizza)
@@ -187,12 +186,11 @@ object Singleton {
     }
 
     fun removePicked(restToDisplay: Restaurant?) {
-
+        youPicked.remove(restToDisplay)
     }
 
     fun removeRejected(restToDisplay: Restaurant?) {
-
-
+        youRejected.remove(restToDisplay)
     }
 
 }
