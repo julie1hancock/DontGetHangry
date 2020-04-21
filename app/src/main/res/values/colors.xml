@@ -6,6 +6,11 @@
 
     <color name="transparent">#00000000</color>
 
+    <color name="darkGray">#333333</color>
+    <color name="midGray">#656565</color>
+    <color name="lightGray">#989898</color>
+
+
     <color name="grayBlue">#3a404c</color>
     <color name="midDarkBlue">#1c222b</color>
     <color name="middleBlue">#2c5175</color>

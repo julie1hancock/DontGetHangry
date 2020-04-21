@@ -35,6 +35,15 @@ undo
         <item name="android:textSize">10dp</item>
     </style>
 
+    <style name="bottomTextButEvenSmallerDifferent" parent="bottomTextButEvenSmaller">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/midGray</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
 
     <style name="header">
         <item name="android:layout_width">wrap_content</item>
