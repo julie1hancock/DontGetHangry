@@ -219,6 +219,7 @@
         android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/blueinfoguy"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:elevation="12dp"
@@ -236,6 +237,7 @@
             />
     </androidx.cardview.widget.CardView>
     <TextView
+        android:id="@+id/blueinfoguy"
         style="@style/bottomTextButEvenSmallerDifferent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/infoCardView"

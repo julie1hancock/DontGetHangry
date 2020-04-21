@@ -2,10 +2,13 @@ package hancock.julie.dontgethangry.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
-import android.view.MotionEvent
 import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import hancock.julie.dontgethangry.R
@@ -13,6 +16,7 @@ import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.presenters.PickingPresenter
 import kotlinx.android.synthetic.main.activity_picking.*
+
 
 class PickingActivity : AppCompatActivity() {
 
@@ -29,19 +33,19 @@ class PickingActivity : AppCompatActivity() {
     }
 
     private fun setupListening() {
-        left.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
+        left.setOnClickListener{
             presenter.leftClicked()
             flash(true)
             updateView()
             false
         }
-        right.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
+        right.setOnClickListener{
             presenter.rightClicked()
             flash(false)
             updateView()
             false
         }
-        bottom.setOnTouchListener{ view: View, motionEvent: MotionEvent ->
+        bottom.setOnClickListener{
             updateBottom()
             false
         }
@@ -51,6 +55,13 @@ class PickingActivity : AppCompatActivity() {
             flash(null)
             updateView()
             false
+        }
+
+        bottomWebsite.setOnClickListener{
+//            Toast.makeText(this, toDisplay?.website ?: "yikers", Toast.LENGTH_SHORT).show()
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://${toDisplay?.website ?: "stackoverflow.com"}/")
+            startActivity(openURL)
         }
 
     }

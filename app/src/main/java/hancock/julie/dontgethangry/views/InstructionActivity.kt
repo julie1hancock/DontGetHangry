@@ -27,15 +27,6 @@ class InstructionActivity : AppCompatActivity() {
         undoCardView.setOnClickListener{
             Toast.makeText(this, "That will undo your last choice" , Toast.LENGTH_SHORT).show()
         }
-//        checkCardView.setOnClickListener{
-//            Toast.makeText(this, "This icon will remain while you're picking to help you remember where to tap.\nClicking it or any area currently green will say YES to the current restaurant.", Toast.LENGTH_LONG).show()
-//        }
-//        xCardView.setOnClickListener{
-//            Toast.makeText(this, "This icon will remain while you're picking to help you remember where to tap.\nClicking it or any area currently red will say NO to the current restaurant.", Toast.LENGTH_LONG).show()
-//        }
-//        infoCardView.setOnClickListener{
-//            Toast.makeText(this, "This icon will remain while you're picking to help you remember where to tap.\nClicking it or any area currently blue will show you more information on the current restaurant.", Toast.LENGTH_LONG).show()
-//        }
 
     }
 }
