@@ -1,10 +1,10 @@
-package hancock.julie.dontgethangry.presenters
+package hancock.julie.dontgethangry.old.presenters
 
 import android.content.Context
 import android.content.Intent
-import hancock.julie.dontgethangry.interfaces.ClickableLayoutListener
-import hancock.julie.dontgethangry.interfaces.Presentation
-import hancock.julie.dontgethangry.views.InstructionActivity
+import hancock.julie.dontgethangry.old.interfaces.ClickableLayoutListener
+import hancock.julie.dontgethangry.old.interfaces.Presentation
+import hancock.julie.dontgethangry.old.views.InstructionActivity
 
 class InstructionPresentation : Presentation, ClickableLayoutListener {
     override fun undoClicked(): String = "That will undo your last choice"

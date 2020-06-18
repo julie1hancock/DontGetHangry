@@ -1,17 +1,17 @@
-package hancock.julie.dontgethangry.views
+package hancock.julie.dontgethangry.old.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.helpers.Run
-import hancock.julie.dontgethangry.helpers.setColor
-import hancock.julie.dontgethangry.helpers.setVisibleOrGone
-import hancock.julie.dontgethangry.helpers.startExternal
-import hancock.julie.dontgethangry.models.Singleton
-import hancock.julie.dontgethangry.presenters.PickingPresenter
-import kotlinx.android.synthetic.main.activity_picking.*
+import hancock.julie.dontgethangry.old.helpers.Run
+import hancock.julie.dontgethangry.old.helpers.setColor
+import hancock.julie.dontgethangry.old.helpers.setVisibleOrGone
+import hancock.julie.dontgethangry.old.helpers.startExternal
+import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.old.presenters.PickingPresenter
+import kotlinx.android.synthetic.main.activity_picking_old.*
 
 
 class PickingActivity : AppCompatActivity() {
@@ -21,7 +21,7 @@ class PickingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_picking)
+        setContentView(R.layout.activity_picking_old)
         setSupportActionBar(toolbar)
 
         presenter = PickingPresenter(Singleton.allRestaurants) //TODO: cleanup

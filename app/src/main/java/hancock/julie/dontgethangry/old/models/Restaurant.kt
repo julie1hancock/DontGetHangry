@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.models
+package hancock.julie.dontgethangry.old.models
 
 //TODO: cleanup
 data class Restaurant(

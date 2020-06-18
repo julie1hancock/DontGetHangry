@@ -1,12 +1,12 @@
-package hancock.julie.dontgethangry.views
+package hancock.julie.dontgethangry.old.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.helpers.toastListener
-import hancock.julie.dontgethangry.presenters.InstructionPresentation
-import hancock.julie.dontgethangry.presenters.PickingPresenter
-import kotlinx.android.synthetic.main.activity_instruction.*
+import hancock.julie.dontgethangry.old.helpers.toastListener
+import hancock.julie.dontgethangry.old.presenters.InstructionPresentation
+import hancock.julie.dontgethangry.old.presenters.PickingPresenter
+import kotlinx.android.synthetic.main.activity_instruction_old.*
 
 class InstructionActivity : AppCompatActivity() {
 
@@ -14,7 +14,7 @@ class InstructionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_instruction)
+        setContentView(R.layout.activity_instruction_old)
 
         presenter = InstructionPresentation() //TODO : inject
 

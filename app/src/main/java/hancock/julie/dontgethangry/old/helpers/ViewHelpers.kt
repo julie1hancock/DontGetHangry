@@ -1,11 +1,10 @@
-package hancock.julie.dontgethangry.helpers
+package hancock.julie.dontgethangry.old.helpers
 
 import android.content.Context
 import android.content.res.Resources
 import android.view.View
 import android.widget.Toast
 import hancock.julie.dontgethangry.R
-import kotlinx.android.synthetic.main.activity_picking.*
 
 fun View.toastListener(str: String, context: Context){
     this.setOnClickListener{

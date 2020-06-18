@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="hancock.julie.dontgethangry">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,25 +11,49 @@
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".views.PickingActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".views.EndActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".views.MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".instruction.InstructionActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.StartActivity"
+        <activity android:name=".start.StartActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".filter.FilterActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".decisions.DecisionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".end.EndActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".views.InstructionActivity"
+
+
+
+
+
+
+        <activity
+            android:name="hancock.julie.dontgethangry.old.views.PickingActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".views.WelcomeActivity" />
+        <activity
+            android:name="hancock.julie.dontgethangry.old.views.EndActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="hancock.julie.dontgethangry.old.views.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name="hancock.julie.dontgethangry.old.views.StartActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name="hancock.julie.dontgethangry.old.views.InstructionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="hancock.julie.dontgethangry.old.views.WelcomeActivity" />
 
     </application>
 

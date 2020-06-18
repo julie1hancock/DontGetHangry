@@ -1,5 +1,11 @@
 <!--    TODO: cleanup-->
 <resources>
+    <string name="title">Don\'t Get Hangry</string>
+
+
+
+
+<!--    old-->
     <string name="app_name">Don\'t Get Hangry</string>
     <string name="title_activity_picking">Don\'t Get Hangry</string>
 </resources>

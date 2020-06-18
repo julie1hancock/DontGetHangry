@@ -1,7 +1,51 @@
 <resources>
 
-    <!--    TODO: cleanup-->
+    <style name="match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
 
+    <style name="wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+
+    <style name="rootLayout" parent="match">
+        <item name="android:background">@color/mutedRed</item>
+    </style>
+
+    <!--toolbar-->
+    <style name="toolbar" parent="match">
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/middleBlue</item>
+    </style>
+
+    <style name="titleText1" parent="wrap">
+        <item name="android:text">@string/title</item>
+        <item name="android:textColor">@color/midDarkBlue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="subheaderText" parent="wrap">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/midDarkBlue</item>
+    </style>
+
+    <!--next arrow -->
+    <style name="nextArrow" parent="wrap">
+        <item name="android:src">@drawable/ic_next_arrow_foreground</item>
+        <item name="android:tint">@color/middleBlue</item>
+    </style>
+
+
+
+
+
+    <!--    old-->
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

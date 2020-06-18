@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.views
+package hancock.julie.dontgethangry.old.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_old)
         startActivity(Intent(this, StartActivity::class.java))
     }
 }

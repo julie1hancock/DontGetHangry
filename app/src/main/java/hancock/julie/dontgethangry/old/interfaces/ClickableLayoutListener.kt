@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.interfaces
+package hancock.julie.dontgethangry.old.interfaces
 
 interface ClickableLayoutListener {
     fun leftClicked() : Any

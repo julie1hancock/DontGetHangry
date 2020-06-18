@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.views
+package hancock.julie.dontgethangry.old.views
 
 import android.content.Context
 import android.content.Intent
@@ -8,18 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.models.Restaurant
-import hancock.julie.dontgethangry.models.Singleton
-import hancock.julie.dontgethangry.presenters.EndPresenter
-import kotlinx.android.synthetic.main.activity_end.*
-import kotlinx.android.synthetic.main.activity_picking.toolbar
-import kotlinx.android.synthetic.main.rest_view.view.*
+import hancock.julie.dontgethangry.old.models.Restaurant
+import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.old.presenters.EndPresenter
+import kotlinx.android.synthetic.main.activity_end_old.*
+import kotlinx.android.synthetic.main.activity_picking_old.toolbar
+import kotlinx.android.synthetic.main.rest_view_old.view.*
 import android.net.Uri
 
 //TODO: cleanup
@@ -31,7 +30,7 @@ class EndActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_end)
+        setContentView(R.layout.activity_end_old)
         setSupportActionBar(toolbar)
         presenter = EndPresenter()
 
@@ -96,7 +95,7 @@ class EndAdapter(private val rests: List<Restaurant>, private val context: Conte
     RecyclerView.Adapter<EndAdapter.EndHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EndHolder {
-        return EndHolder(LayoutInflater.from(context).inflate(R.layout.rest_view, parent, false))
+        return EndHolder(LayoutInflater.from(context).inflate(R.layout.rest_view_old, parent, false))
     }
 
     override fun getItemCount() = rests.size

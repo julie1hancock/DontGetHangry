@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: cleanup-->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.PickingActivity"
-    android:id="@+id/pickingLayout"
-    android:background="@color/lightBlue"
-    >
+    android:background="@color/grayBlue">
 
-<!--    <WebView-->
-<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        android:id="@+id/pickingWebView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        />-->
+    <!--this is a straight trash file i'm sorry-->
 
 
-<!--    toolbar     -->
+
+
+    <!--    toolbar     -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/clickableLayout"
         >
+        <!--        app:layout_constraintBottom_toTopOf="@id/clickableLayout"-->
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -37,13 +30,12 @@
             android:background="@color/middleBlue"
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/toolbarTitle"
-                    android:text="Don't Get Hangry"
+                    android:text="Tappin' Instructions"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +51,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/toolbarTitle"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="Keep on tappin'!"
+                    android:text="Click the next arrow when you understand!"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
@@ -86,7 +78,6 @@
                         android:tint="@color/midDarkBlue"
                         />
                 </androidx.cardview.widget.CardView>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.Toolbar>
@@ -94,36 +85,27 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-<!--    color flash layout    -->
-    <View
-        android:visibility="gone"
-        android:id="@+id/colorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="800dp"
-        app:layout_constraintTop_toBottomOf="@id/mainToolbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
-
-<!--    entire clickable layout     -->
+    <!--    entire clickable layout     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clickableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/mainToolbar"
         >
-    <!--LEFT RIGHT LAYOUT-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/leftRightLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
-        android:layout_width="match_parent"
-        android:layout_height="900dp"
-        >
+        <!--LEFT RIGHT LAYOUT-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/leftRightLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/left"
+                android:background="@color/mutedGreen"
+
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -132,9 +114,11 @@
                 app:layout_constraintEnd_toStartOf="@id/right"
                 />
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@color/mutedRed"
                 android:id="@+id/right"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/left"
@@ -152,56 +136,119 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            android:background="@color/midLightBlue"
+            >
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-<!--    middle component    -->
+
+
+
+
+
+
+    <!--    entire word clickable layout     -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/clickableLayoutText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        android:id="@+id/middleView"
+        app:layout_constraintTop_toBottomOf="@id/mainToolbar"
         >
-        <androidx.cardview.widget.CardView
+        <!--LEFT RIGHT LAYOUT-->
+        <LinearLayout
+            android:id="@+id/leftRightLayoutText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:elevation="12dp"
-            android:id="@+id/middleCardView"
-            app:cardCornerRadius="150dp"
+            app:layout_constraintBottom_toTopOf="@id/bottomText"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:orientation="horizontal"
             >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:id="@+id/restIcon"
-                android:scaleType="centerCrop"
+            <TextView
+                android:layout_marginBottom="55dp"
+                style="@style/header"
+                android:id="@+id/leftText"
+                android:text="Tap anywhere\nin the green\narea to say\nYES"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 />
-        </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/restName"
-            tools:text="test"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/middleCardView"
-            style="@style/titleText"
-            android:textColor="@color/middleBlue"
+            <TextView
+                android:layout_marginBottom="55dp"
+                style="@style/header"
+                android:id="@+id/rightText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tap anywhere\nin the red\narea to say\nNO"
+                android:layout_weight="1"
+                />
 
+
+        </LinearLayout>
+        <!--        bottom guy-->
+        <TextView
+            style="@style/header"
+            android:id="@+id/bottomText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap anywhere in\nthe blue area to\nfind out more"
+            app:layout_constraintTop_toBottomOf="@id/leftRightLayoutText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
+    <ImageView
+        android:id="@+id/instructionArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_next_arrow_foreground"
+        android:tint="@color/middleBlue"
+        />
 
 
-<!--    check and x images layout guy-->
+    <!--    some icon guys-->
+    <!--    info indicator guy-->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/blueinfoguy"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:elevation="12dp"
+        android:id="@+id/infoCardView"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/midLightBlue"
+        >
+        <ImageView
+            android:src="@drawable/ic_info_foreground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/infoIcon"
+            android:scaleType="centerCrop"
+            android:tint="@color/midDarkBlue"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/blueinfoguy"
+        style="@style/bottomTextButEvenSmallerDifferent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/infoCardView"
+        android:text="This icon stays\nvisible as you're\ntappin' as a reminder\nthat this is the\nMORE INFO area"
+        android:textColor="@color/lightGray"
+        />
+
+
+    <!--    check and x images layout guy-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/checkXLayoutGuy"
         app:layout_constraintTop_toBottomOf="@id/mainToolbar"
@@ -228,6 +275,14 @@
                 android:tint="@color/darkerGreen"
                 />
         </androidx.cardview.widget.CardView>
+        <TextView
+            style="@style/bottomTextButEvenSmallerDifferent"
+            app:layout_constraintTop_toTopOf="@id/checkCardView"
+            app:layout_constraintBottom_toBottomOf="@id/checkCardView"
+            app:layout_constraintStart_toEndOf="@id/checkCardView"
+            android:text="This icon stays visible\nas you're tappin' as a\nreminder that this is\nthe SAY YES area"
+            />
+
 
         <androidx.cardview.widget.CardView
             android:layout_margin="8dp"
@@ -248,90 +303,17 @@
                 android:tint="@color/darkerRed"
                 />
         </androidx.cardview.widget.CardView>
+        <TextView
+            style="@style/bottomTextButEvenSmallerDifferent"
+            app:layout_constraintTop_toTopOf="@id/xCardView"
+            app:layout_constraintBottom_toBottomOf="@id/xCardView"
+            app:layout_constraintEnd_toStartOf="@id/xCardView"
+            android:text="This icon stays visible\nas you're tappin' as a\nreminder that this is\nthe SAY NO area"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    bottom view     -->
-    <LinearLayout
-        android:visibility="gone"
-        android:background="@color/midLightBlue"
-        android:id="@+id/bottomLayout"
-        android:layout_width="match_parent"
-        android:layout_height="203dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical"
-        android:padding="8dp"
-        >
-        <TextView
-            tools:text="Fast food $"
-            android:id="@+id/bottomTypeAndPrice"
-            style="@style/bottomText"
-            />
-        <TextView
-            tools:text="Address!"
-            android:id="@+id/bottomAddress"
-            style="@style/bottomText"
-            />
-        <TextView
-            tools:text="1.2 miles"
-            android:id="@+id/bottomMiles"
-            style="@style/bottomText"
-            />
-        <TextView
-            tools:text="9am-9pm"
-            android:id="@+id/bottomHours"
-            style="@style/bottomText"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="Website: "
-                style="@style/bottomText"
-                android:paddingEnd="0dp"
-                />
-            <TextView
-                tools:text="Website: www.edrgyuiol.com"
-                android:id="@+id/bottomWebsite"
-                style="@style/bottomText"
-                android:textColor="@color/lightBlue"
-                android:paddingStart="4dp"
-                />
-        </LinearLayout>
-    </LinearLayout>
-
-<!--    miles left-->
-<TextView
-        tools:text="7.2 miles away"
-        android:textColor="@color/midDarkBlue"
-        android:textSize="20dp"
-        android:id="@+id/milesLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="16dp"
-        />
-<!--    info indicator guy-->
-    <androidx.cardview.widget.CardView
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:elevation="12dp"
-        android:id="@+id/infoCardView"
-        app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="@color/midLightBlue"
-        >
-        <ImageView
-            android:src="@drawable/ic_info_foreground"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/infoIcon"
-            android:scaleType="centerCrop"
-            android:tint="@color/midDarkBlue"
-            />
-    </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

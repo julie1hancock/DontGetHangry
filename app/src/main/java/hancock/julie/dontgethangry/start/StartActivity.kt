@@ -1,18 +1,22 @@
-package hancock.julie.dontgethangry.views
+package hancock.julie.dontgethangry.start
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.presenters.InstructionPresentation
-import kotlinx.android.synthetic.main.activity_start.*
+import hancock.julie.dontgethangry.filter.FilterActivity
+import kotlinx.android.synthetic.main.activity_instruction.*
 
 class StartActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
-        startPageArrow.setOnClickListener{
-            InstructionPresentation().startActivity(this)
+
+        nextArrow.setOnClickListener{
+            startActivity(Intent(this, FilterActivity::class.java))
         }
     }
 }
+
