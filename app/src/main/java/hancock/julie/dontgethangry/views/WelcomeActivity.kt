@@ -6,7 +6,7 @@ import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.presenters.InstructionPresentation
 import kotlinx.android.synthetic.main.activity_start.*
 
-class StartActivity : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

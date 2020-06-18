@@ -2,17 +2,13 @@ package hancock.julie.dontgethangry.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.models.Restaurant
+import hancock.julie.dontgethangry.helpers.Run
+import hancock.julie.dontgethangry.helpers.setColor
+import hancock.julie.dontgethangry.helpers.setVisibleOrGone
+import hancock.julie.dontgethangry.helpers.startExternal
 import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.presenters.PickingPresenter
 import kotlinx.android.synthetic.main.activity_picking.*
@@ -20,15 +16,17 @@ import kotlinx.android.synthetic.main.activity_picking.*
 
 class PickingActivity : AppCompatActivity() {
 
-    lateinit var presenter: PickingPresenter
-    var toDisplay: Restaurant? = null
+    private lateinit var presenter: PickingPresenter //TODO: cast up
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picking)
         setSupportActionBar(toolbar)
+
+        presenter = PickingPresenter(Singleton.allRestaurants) //TODO: cleanup
+
         setupListening()
-        presenter = PickingPresenter(Singleton.allRestaurants)
         updateView()
     }
 
@@ -46,6 +44,7 @@ class PickingActivity : AppCompatActivity() {
             false
         }
         bottom.setOnClickListener{
+            presenter.bottomClicked()
             updateBottom()
             false
         }
@@ -56,24 +55,13 @@ class PickingActivity : AppCompatActivity() {
             updateView()
             false
         }
-
         bottomWebsite.setOnClickListener{
-//            Toast.makeText(this, toDisplay?.website ?: "yikers", Toast.LENGTH_SHORT).show()
-            val openURL = Intent(Intent.ACTION_VIEW)
-            openURL.data = Uri.parse("https://${toDisplay?.website ?: "stackoverflow.com"}/")
-            startActivity(openURL)
+            startExternal("https://${presenter.getRestToDisplay()?.website ?: "google.com"}/", this)
         }
 
     }
 
     private fun flash(isGreen: Boolean?) {
-        val AIsVisible = clickableLayout.isVisible
-        val BIsVisible = middleView.isVisible
-        val CIsVisible = milesLeft.isVisible
-        val DIsVisible = bottomLayout.isVisible
-        val EIsVisible = checkXLayoutGuy.isVisible
-        val FIsVisible = infoCardView.isVisible
-
         clickableLayout.setVisibleOrGone(false)
         middleView.setVisibleOrGone(false)
         milesLeft.setVisibleOrGone(false)
@@ -81,84 +69,68 @@ class PickingActivity : AppCompatActivity() {
         checkXLayoutGuy.setVisibleOrGone(false)
         infoCardView.setVisibleOrGone(false)
 
-        when {
-            isGreen == null -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedYellow))
-            isGreen -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedGreen))
-            else -> colorLayout.setBackgroundColor(resources.getColor(R.color.mutedRed))
-        }
+        colorLayout.setColor(isGreen, resources)
         colorLayout.setVisibleOrGone(true)
 
         Run.after(250) {
             colorLayout.setVisibleOrGone(false)
-            clickableLayout.setVisibleOrGone(AIsVisible)
-            middleView.setVisibleOrGone(BIsVisible)
-            milesLeft.setVisibleOrGone(CIsVisible)
-            bottomLayout.setVisibleOrGone(DIsVisible)
-            checkXLayoutGuy.setVisibleOrGone(EIsVisible)
-            infoCardView.setVisibleOrGone(FIsVisible)
+
+            clickableLayout.setVisibleOrGone(true)
+            middleView.setVisibleOrGone(true)
+            checkXLayoutGuy.setVisibleOrGone(true)
+
+            bottomLayout.setVisibleOrGone(presenter.bottomIsVisible)
+            milesLeft.setVisibleOrGone(!presenter.bottomIsVisible)
+            infoCardView.setVisibleOrGone(!presenter.bottomIsVisible)
         }
     }
 
     @SuppressLint("SetTextI18n")
     private fun updateView() {
-        undoCardView.setVisibleOrGone(presenter.showUndo())
-        toDisplay = presenter.getRestToDisplay()
+        undoCardView.setVisibleOrGone(presenter.shouldShowUndo())
+        val toDisplay = presenter.getRestToDisplay()
+
         if(toDisplay == null) {
             showEndScreen()
             return
         }
 
-        restIcon.setImageResource(toDisplay?.image!!)
-        milesLeft.text = "${toDisplay?.milesAway ?: "!!"} miles away"
-        restName.text = toDisplay?.name ?: "!!"
+        restIcon.setImageResource(toDisplay.getDisplayImage())
+        milesLeft.text = toDisplay.getDisplayMilesAway()
+        restName.text = toDisplay.getDisplayName()
 
-        bottomTypeAndPrice.text = "${toDisplay?.type ?: "!!"} ${toDisplay?.price ?: "!!"}"
-        bottomAddress.text = "Address: ${toDisplay?.address ?: "!!"}"
-        bottomMiles.text = "${toDisplay?.milesAway ?: "!!"} miles away"
-        bottomHours.text = "Hours: ${toDisplay?.hours ?: "!!"}"
-        bottomWebsite.text = toDisplay?.website ?: "!!"
+        bottomTypeAndPrice.text = toDisplay.getDisplayTypeAndPrice()
+        bottomAddress.text = toDisplay.getDisplayAddress()
+        bottomMiles.text = toDisplay.getDisplayMilesAway()
+        bottomHours.text = toDisplay.getDisplayHours()
+        bottomWebsite.text = toDisplay.getDisplayWebsite()
 
     }
 
-    @SuppressLint("SetTextI18n")
     private fun showEndScreen() {
-        startActivity(Intent(this, EndActivity::class.java))
+        startActivity(Intent(this, EndActivity::class.java)) //TODO
         finish()
     }
 
-    var bottomIsVisible = false
     private fun updateBottom() {
-        bottomIsVisible = !bottomIsVisible
-        if(bottomIsVisible){
-            infoCardView.visibility = View.GONE
-            bottomLayout.visibility = View.VISIBLE
+        presenter.negateBottomViewVisibility()
+
+        if(presenter.bottomIsVisible) {
+            bottomLayout.setVisibleOrGone(true)
+            infoCardView.setVisibleOrGone(false)
             middleView.setPadding(0,0,0,450)
-            milesLeft.visibility = View.GONE
+            milesLeft.setVisibleOrGone(false)
         }
-        else{
-            infoCardView.visibility = View.VISIBLE
-
-            bottomLayout.visibility = View.GONE
+        else {
+            bottomLayout.setVisibleOrGone(false)
+            infoCardView.setVisibleOrGone(true)
             middleView.setPadding(0,0,0,0)
-
-            milesLeft.visibility = View.VISIBLE
+            milesLeft.setVisibleOrGone(true)
         }
 
     }
 
 }
 
-private fun View.setVisibleOrGone(b: Boolean) {
-    this.visibility = if(b) View.VISIBLE
-    else View.GONE
-}
 
-class Run {
-    companion object {
-        fun after(delay: Long, process: () -> Unit) {
-            Handler().postDelayed({
-                process()
-            }, delay)
-        }
-    }
-}
+

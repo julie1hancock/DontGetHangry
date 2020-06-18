@@ -2,6 +2,7 @@ package hancock.julie.dontgethangry.models
 
 import hancock.julie.dontgethangry.R
 
+//TODO: cleanup
 object Singleton {
 
     var theyPicked = mutableListOf<Restaurant>()

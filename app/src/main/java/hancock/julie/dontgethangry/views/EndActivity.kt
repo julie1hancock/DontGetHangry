@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_picking.toolbar
 import kotlinx.android.synthetic.main.rest_view.view.*
 import android.net.Uri
 
-
+//TODO: cleanup
 class EndActivity : AppCompatActivity() {
 
     private lateinit var presenter: EndPresenter
@@ -91,6 +91,7 @@ class EndActivity : AppCompatActivity() {
 
 }
 
+//TODO: cleanup
 class EndAdapter(private val rests: List<Restaurant>, private val context: Context) :
     RecyclerView.Adapter<EndAdapter.EndHolder>() {
 
@@ -104,7 +105,6 @@ class EndAdapter(private val rests: List<Restaurant>, private val context: Conte
         holder.name.text = rests[position].name
         holder.icon.setImageResource(rests[position].image)
         holder.root.setOnClickListener {
-//            Toast.makeText(context, rests[position].address, Toast.LENGTH_SHORT).show()
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=${createPostfix(rests[position].address)}"))
             context.startActivity(intent)
         }

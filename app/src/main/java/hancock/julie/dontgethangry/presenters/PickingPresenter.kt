@@ -1,53 +1,78 @@
 package hancock.julie.dontgethangry.presenters
 
+import android.content.Context
+import android.content.Intent
+import hancock.julie.dontgethangry.interfaces.ClickableLayoutListener
+import hancock.julie.dontgethangry.interfaces.Presentation
 import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
+import hancock.julie.dontgethangry.views.PickingActivity
 
+//TODO: moveToNext
 class PickingPresenter(
-    private val allRestaurants: List<Restaurant>
-) {
+    private val allRestaurants: List<Restaurant> = mutableListOf()
+) : Presentation, ClickableLayoutListener {
 
-    var lastRest: Restaurant? = null
-    var saidYesToLastRest : Boolean = false
+    //TODO: cleanup undoing
+    private var lastRest: Restaurant? = null
+    private var saidYesToLastRest : Boolean = false
+    private var index = 0
 
-    var index = 0
+    private var curRestDisplayed: Restaurant? = null
+    internal var bottomIsVisible = false
 
-    fun leftClicked() {
+
+    override fun startActivity(comingFrom: Context) {
+        comingFrom.startActivity(Intent(comingFrom, PickingActivity::class.java))
+    }
+
+    override fun leftClicked(): Any {
         Singleton.addPicked(getRestToDisplay()!!)
-        cleanup(true)
+        moveToNext(true)
+        return ""
     }
 
-    private fun cleanup(b: Boolean) {
-        lastRest = getRestToDisplay()
-        saidYesToLastRest = b
-        index++
-    }
-
-    fun rightClicked() {
+    override fun rightClicked(): Any {
         Singleton.addRejected(getRestToDisplay()!!)
-        cleanup(false)
+        moveToNext(false)
+        return ""
     }
 
-    fun getRestToDisplay(): Restaurant? {
-        return if(index >= allRestaurants.size) null
-        else allRestaurants[index]
+    override fun bottomClicked(): Any {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    fun undoClicked() {
+    override fun undoClicked(): Any {
         index--
         if(saidYesToLastRest)
             Singleton.removePicked(getRestToDisplay())
         else
             Singleton.removeRejected(getRestToDisplay())
         lastRest = null
+        return ""
     }
 
-    fun showUndo() : Boolean {
+    private fun moveToNext(wasAccepted: Boolean) {
+        lastRest = getRestToDisplay()
+        saidYesToLastRest = wasAccepted
+        index++
+    }
+
+    fun getRestToDisplay(): Restaurant? {
+        return if(index >= allRestaurants.size) null// TODO("PickingPresenter:: yikes. you're index is out of range")
+        else allRestaurants[index]
+    }
+
+    fun shouldShowUndo() : Boolean {
         return when {
             index <= 0 -> false //don't show on first or before
             index >= allRestaurants.size -> false
             lastRest == null -> false
             else -> true
         }
+    }
+
+    fun negateBottomViewVisibility() {
+        bottomIsVisible = !bottomIsVisible
     }
 }

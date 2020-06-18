@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--    TODO: cleanup-->
 <resources>
     <color name="colorPrimary">#2c5174</color>
     <color name="colorPrimaryDark">#1c222b</color>

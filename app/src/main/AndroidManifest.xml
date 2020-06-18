@@ -28,6 +28,7 @@
 
         <activity android:name=".views.InstructionActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".views.WelcomeActivity" />
 
     </application>
 

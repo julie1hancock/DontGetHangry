@@ -3,6 +3,7 @@ package hancock.julie.dontgethangry.presenters
 import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
 
+//TODO: cleanup
 class EndPresenter {
 
     var overlappingRests = mutableListOf<Restaurant>()
