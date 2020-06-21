@@ -9,7 +9,7 @@ import hancock.julie.dontgethangry.old.helpers.Run
 import hancock.julie.dontgethangry.old.helpers.setColor
 import hancock.julie.dontgethangry.old.helpers.setVisibleOrGone
 import hancock.julie.dontgethangry.old.helpers.startExternal
-import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.old.presenters.PickingPresenter
 import kotlinx.android.synthetic.main.activity_picking_old.*
 

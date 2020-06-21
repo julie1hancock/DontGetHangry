@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.old.models
+package hancock.julie.dontgethangry.models
 
 //TODO: cleanup
 data class Restaurant(
@@ -18,16 +18,11 @@ data class Restaurant(
     }
 
     fun getDisplayImage() : Int = image
-
     fun getDisplayMilesAway() : String = "$milesAway miles away"
     fun getDisplayName() : String = name
     fun getDisplayTypeAndPrice() : String = "$type + $price"
     fun getDisplayAddress() : String = "Address: $address "
     fun getDisplayHours() : String = "Hours: $hours"
     fun getDisplayWebsite() : String = website
-
-
-
-
 
 }

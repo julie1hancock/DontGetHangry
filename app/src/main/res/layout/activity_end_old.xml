@@ -42,7 +42,9 @@
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
-<!--    winning     -->
+
+
+    <!--    winning     -->
     <LinearLayout
         android:id="@+id/winningLayout"
         android:layout_width="match_parent"
@@ -73,6 +75,15 @@
             android:layout_height="wrap_content"
             />
     </LinearLayout>
+
+
+
+
+
+
+
+
+
 <!--    losing      -->
     <LinearLayout
         android:id="@+id/losingLayout"

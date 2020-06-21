@@ -1,7 +1,7 @@
 package hancock.julie.dontgethangry.old.presenters
 
-import hancock.julie.dontgethangry.old.models.Restaurant
-import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.models.Restaurant
+import hancock.julie.dontgethangry.models.Singleton
 
 //TODO: cleanup
 class EndPresenter {

@@ -14,6 +14,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
 
+        //currently assuming dining alone
         nextArrow.setOnClickListener{
             startActivity(Intent(this, FilterActivity::class.java))
         }

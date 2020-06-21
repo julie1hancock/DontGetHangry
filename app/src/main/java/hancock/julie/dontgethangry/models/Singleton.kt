@@ -1,15 +1,39 @@
-package hancock.julie.dontgethangry.old.models
+package hancock.julie.dontgethangry.models
 
 import hancock.julie.dontgethangry.R
 
-//TODO: cleanup
 object Singleton {
 
-    var theyPicked = mutableListOf<Restaurant>()
-    var allRestaurants = setup()
+    var diningAlone = true
 
     var youPicked = mutableListOf<Restaurant>()
-    var youRejected = mutableListOf<Restaurant>()
+    var theyPicked = mutableListOf<Restaurant>()
+
+    fun addPicked(r: Restaurant){
+        youPicked.add(r)
+    }
+
+    fun removePicked(restToDisplay: Restaurant?) {
+        youPicked.remove(restToDisplay)
+    }
+    var allRestaurants = setup() //TODO: api
+
+
+//    var youRejected = mutableListOf<Restaurant>()
+
+//    fun addRejected(r: Restaurant){
+//        youRejected.add(r)
+//    }
+
+
+//    fun removeRejected(restToDisplay: Restaurant?) {
+//        youRejected.remove(restToDisplay)
+//    }
+
+
+
+
+
 
 
     private fun setup(): MutableList<Restaurant> {
@@ -38,6 +62,17 @@ object Singleton {
         theyPicked.add(laJollaGroves)
         theyPicked.add(slabPizza)
 
+        youPicked.add(spicy)
+        youPicked.add(zupas)
+        youPicked.add(jDawgs)
+        youPicked.add(costaVida)
+        youPicked.add(chickFilA)
+        youPicked.add(station22)
+        youPicked.add(waffleLove)
+        youPicked.add(tucanos)
+        youPicked.add(rodizioGrill)
+        youPicked.add(laJollaGroves)
+        youPicked.add(slabPizza)
 
         val list = mutableListOf<Restaurant>()
         list.add(tucanos) //9
@@ -176,22 +211,4 @@ object Singleton {
         rating = 4.4,
         image = R.drawable.spicythailogo
     )
-
-
-    fun addPicked(r: Restaurant){
-        youPicked.add(r)
-    }
-
-    fun addRejected(r: Restaurant){
-        youRejected.add(r)
-    }
-
-    fun removePicked(restToDisplay: Restaurant?) {
-        youPicked.remove(restToDisplay)
-    }
-
-    fun removeRejected(restToDisplay: Restaurant?) {
-        youRejected.remove(restToDisplay)
-    }
-
 }

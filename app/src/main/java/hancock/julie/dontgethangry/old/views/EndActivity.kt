@@ -13,13 +13,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.old.models.Restaurant
-import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.old.presenters.EndPresenter
 import kotlinx.android.synthetic.main.activity_end_old.*
 import kotlinx.android.synthetic.main.activity_picking_old.toolbar
 import kotlinx.android.synthetic.main.rest_view_old.view.*
 import android.net.Uri
+import hancock.julie.dontgethangry.models.Restaurant
 
 //TODO: cleanup
 class EndActivity : AppCompatActivity() {
@@ -47,13 +47,13 @@ class EndActivity : AppCompatActivity() {
     private fun setupBtnListener() {
         startOverBtnWin.setOnClickListener{
             Singleton.youPicked.clear()
-            Singleton.youRejected.clear()
+//            Singleton.youRejected.clear()
             startActivity(Intent(this, PickingActivity::class.java))
             finish()
         }
         startOverBtnLose.setOnClickListener{
             Singleton.youPicked.clear()
-            Singleton.youRejected.clear()
+//            Singleton.youRejected.clear()
             startActivity(Intent(this, PickingActivity::class.java))
             finish()
         }

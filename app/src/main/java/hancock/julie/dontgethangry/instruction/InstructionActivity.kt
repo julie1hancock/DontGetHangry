@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import hancock.julie.dontgethangry.R
+import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.start.StartActivity
 import kotlinx.android.synthetic.main.activity_instruction.*
 
@@ -14,6 +15,7 @@ class InstructionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_instruction)
 
+        Singleton.youPicked
         nextArrow.setOnClickListener{
             startActivity(Intent(this, StartActivity::class.java))
         }

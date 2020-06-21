@@ -5,6 +5,14 @@
 
 
 
+<!--    end screen-->
+    <string name="hanger_avoided">Hanger Avoided!</string>
+    <string name="hanger_not_avoided">Hanger Not Avoided!</string>
+    <string name="start_over">Start Over</string>
+    <string name="nav_instructions">Click any above logo to launch navigation!</string>
+
+
+
 <!--    old-->
     <string name="app_name">Don\'t Get Hangry</string>
     <string name="title_activity_picking">Don\'t Get Hangry</string>

@@ -2,10 +2,10 @@ package hancock.julie.dontgethangry.old.presenters
 
 import android.content.Context
 import android.content.Intent
+import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.old.interfaces.ClickableLayoutListener
 import hancock.julie.dontgethangry.old.interfaces.Presentation
-import hancock.julie.dontgethangry.old.models.Restaurant
-import hancock.julie.dontgethangry.old.models.Singleton
+import hancock.julie.dontgethangry.models.Singleton
 import hancock.julie.dontgethangry.old.views.PickingActivity
 
 //TODO: moveToNext
@@ -33,7 +33,7 @@ class PickingPresenter(
     }
 
     override fun rightClicked(): Any {
-        Singleton.addRejected(getRestToDisplay()!!)
+//        Singleton.addRejected(getRestToDisplay()!!)
         moveToNext(false)
         return ""
     }
@@ -46,8 +46,8 @@ class PickingPresenter(
         index--
         if(saidYesToLastRest)
             Singleton.removePicked(getRestToDisplay())
-        else
-            Singleton.removeRejected(getRestToDisplay())
+//        else
+//            Singleton.removeRejected(getRestToDisplay())
         lastRest = null
         return ""
     }
