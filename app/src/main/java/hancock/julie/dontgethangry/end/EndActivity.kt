@@ -1,15 +1,15 @@
 package hancock.julie.dontgethangry.end
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.epoxy.EpoxyModel
 import hancock.julie.dontgethangry.R
-import hancock.julie.dontgethangry.filter.FilterActivity
 import kotlinx.android.synthetic.main.activity_end.*
 
 class EndActivity : AppCompatActivity() {
 
     lateinit var presentation: EndPresentation
+    var models = mutableListOf<EpoxyModel<*>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,16 +19,47 @@ class EndActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        toolbarSubtitle.text = presentation.getSubText(resources)
-        if(presentation.cantNavigate()) nav_instructions.text = ""
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentLayout, presentation.getFragment())//.replace
-            .commit()
+        models = mutableListOf()
+        models.add(createToolbarModel(bottomText = presentation.getSubText(resources)))
+        presentation.getOverlapping().forEach {
+            models.add(createRestaurantRowModel(it,this@EndActivity))
+        }
+
+        end_rv.setModels(models)
+
+//        toolbarSubtitle.text = presentation.getSubText(resources)
+//        startOverBtn.setOnClickListener{
+//            startActivity(Intent(this, FilterActivity::class.java))
+//        }
+//
+//        val list= mutableListOf<Rest>(
+//            Rest("one"),
+//            Rest("two"),
+//            Rest("three"),
+//            Rest("four"),
+//            Rest("five")
+//        )
+//
+//        main_activity_raffle_rv.withModels {
+//            list.forEach {
+//                    rest {
+//                        id(hashCode())
+//                        name(it.name)
+//                    }
+//                }
+//            }
+//        }
+
+
+
+
+//        if(presentation.cantNavigate()) nav_instructions.text = ""
+//        supportFragmentManager.beginTransaction()
+//            .add(R.id.fragmentLayout, presentation.getFragment())//.replace
+//            .commit()
 
 //        var fragment = presentation.getFragment()
-        startOverBtn.setOnClickListener{
-            startActivity(Intent(this, FilterActivity::class.java))
-        }
+
     }
 
 }

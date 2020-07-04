@@ -3,6 +3,10 @@ package hancock.julie.dontgethangry.end
 import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import hancock.julie.dontgethangry.R
+import hancock.julie.dontgethangry.end.no.HangryAloneFragment
+import hancock.julie.dontgethangry.end.no.HangryTogetherFragment
+import hancock.julie.dontgethangry.end.no.NotHangryAloneFragment
+import hancock.julie.dontgethangry.end.no.NotHangryTogetherFragment
 import hancock.julie.dontgethangry.models.Restaurant
 import hancock.julie.dontgethangry.models.Singleton
 
@@ -39,7 +43,6 @@ class EndPresenter : EndPresentation {
     }
 
     override fun hangerAvoided(): Boolean {
-
         if(overlappingRests.isEmpty()) setOverlapping()
 
         return when {
@@ -51,7 +54,6 @@ class EndPresenter : EndPresentation {
     }
 
     private fun setOverlapping(): Boolean {
-
         Singleton.theyPicked.forEach {
             if(Singleton.youPicked.contains(it) && !overlappingRests.contains(it)) {
                 overlappingRests.add(it)

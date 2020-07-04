@@ -1,66 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/rootLayout">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <TextView
-                android:id="@+id/toolbarTitle"
-                style="@style/titleText1"
-                />
-            <TextView
-                android:id="@+id/toolbarSubtitle"
-                style="@style/subheaderText"
-                tools:text="@string/hanger_avoided"
-                />
-        </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-
-    <FrameLayout
-        android:background="@color/lightBlue"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        android:id="@+id/fragmentLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:id="@+id/bottomLayout"
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/end_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
-        style="@style/wrap"
-        android:layout_width="match_parent"
-        android:background="@color/middleBlue"
-        android:gravity="center"
-        android:padding="20dp"
-        >
-        <TextView
-            android:id="@+id/nav_instructions"
-            android:text="@string/nav_instructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:id="@+id/startOverBtn"
-            android:text="@string/start_over"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

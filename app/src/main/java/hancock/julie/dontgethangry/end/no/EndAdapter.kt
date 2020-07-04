@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.end.no
 
 import android.content.Context
 import android.content.Intent
@@ -19,7 +19,13 @@ class EndAdapter(private val rests: List<Restaurant>, private val context: Conte
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EndHolder {
-        return EndHolder(LayoutInflater.from(context).inflate(R.layout.rest_view_old, parent, false))
+        return EndHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.rest_view_old,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount() = rests.size

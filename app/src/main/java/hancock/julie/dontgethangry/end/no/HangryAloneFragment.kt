@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.end.no
 
 import android.os.Bundle
 import android.view.LayoutInflater

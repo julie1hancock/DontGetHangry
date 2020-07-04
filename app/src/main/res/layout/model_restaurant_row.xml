@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/midDarkBlue"
+    android:padding="8dp"
+    android:id="@+id/root"
+    >
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:elevation="12dp"
+        android:id="@+id/middleCardView"
+        app:cardCornerRadius="35dp"
+        app:cardBackgroundColor="@color/lightBlue"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/image"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/offwhite"
+        tools:text="Chick-fil-A"
+        style="@style/titleText1"
+        />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="484 W Bulldog Ln"
+        android:textColor="@color/offwhite"
+        style="@style/titleTextSmall"
+        />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        android:id="@+id/milesAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Miles away: 7.2"
+        android:textColor="@color/offwhite"
+        style="@style/titleTextSmall"
+        />
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text="Fast Food"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text="$"-->
+<!--        />-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text="Website: www.chickfila.com"-->
+<!--        />-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:text="Hours: 10am-8pm"-->
+<!--        />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
