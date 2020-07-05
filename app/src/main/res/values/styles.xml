@@ -24,7 +24,7 @@
     </style>
 
     <style name="titleText1" parent="wrap">
-<!--        <item name="android:text">@string/title</item>-->
+        <!--        <item name="android:text">@string/title</item>-->
         <item name="android:textColor">@color/midDarkBlue</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">24dp</item>
@@ -131,7 +131,7 @@ undo
         <item name="android:background">@drawable/btn</item>
         <item name="android:padding">16dp</item>
         <item name="android:textColor">@color/offwhite</item>
-        <item name="android:text">Start Over</item>
+<!--        <item name="android:text">Start Over</item>-->
     </style>
 
     <style name="bottomView" parent="titleTextSmall">

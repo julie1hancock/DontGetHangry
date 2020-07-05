@@ -14,16 +14,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:elevation="12dp"
-        android:id="@+id/middleCardView"
-        app:cardCornerRadius="35dp"
+        android:id="@+id/rowCV"
+        app:cardCornerRadius="50dp"
         app:cardBackgroundColor="@color/lightBlue"
         >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="100dp"
             android:id="@+id/image"
             android:scaleType="centerCrop"
             />
@@ -31,33 +31,47 @@
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        app:layout_constraintBottom_toTopOf="@id/address"
+        app:layout_constraintStart_toEndOf="@id/rowCV"
         android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textColor="@color/offwhite"
         tools:text="Chick-fil-A"
-        style="@style/titleText1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+
+        style="@style/subheaderText"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:maxLines="3"
+        android:layout_width="0dp"
         />
     <TextView
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+
         app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        app:layout_constraintBottom_toTopOf="@id/milesAway"
+        app:layout_constraintStart_toEndOf="@id/rowCV"
         android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         tools:text="484 W Bulldog Ln"
         android:textColor="@color/offwhite"
-        style="@style/titleTextSmall"
+        style="@style/subheaderText"
+        android:maxLines="3"
+        android:layout_width="0dp"
         />
     <TextView
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+
         app:layout_constraintTop_toBottomOf="@id/address"
-        app:layout_constraintStart_toEndOf="@id/middleCardView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowCV"
         android:id="@+id/milesAway"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         tools:text="Miles away: 7.2"
         android:textColor="@color/offwhite"
-        style="@style/titleTextSmall"
+        style="@style/subheaderText"
+        android:maxLines="3"
+        android:layout_width="0dp"
         />
 
 <!--    <TextView-->

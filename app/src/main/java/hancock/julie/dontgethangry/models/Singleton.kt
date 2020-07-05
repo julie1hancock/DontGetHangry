@@ -19,23 +19,6 @@ object Singleton {
     var allRestaurants = setup() //TODO: api
 
 
-//    var youRejected = mutableListOf<Restaurant>()
-
-//    fun addRejected(r: Restaurant){
-//        youRejected.add(r)
-//    }
-
-
-//    fun removeRejected(restToDisplay: Restaurant?) {
-//        youRejected.remove(restToDisplay)
-//    }
-
-
-
-
-
-
-
     private fun setup(): MutableList<Restaurant> {
         val spicy = getSpicyThai()
         val zupas = getZupas()

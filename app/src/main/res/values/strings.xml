@@ -1,7 +1,5 @@
-<!--    TODO: cleanup-->
 <resources>
     <string name="title">Don\'t Get Hangry</string>
-
 
 
 
@@ -9,7 +7,15 @@
     <string name="hanger_avoided">Hanger Avoided!</string>
     <string name="hanger_not_avoided">Hanger Not Avoided!</string>
     <string name="start_over">Start Over</string>
-    <string name="nav_instructions">Click any above logo to launch navigation!</string>
+    <string name="nav_instructions">Click to launch navigation!</string>
+    <string name="oh_no">Don\'t get hangrier!!!</string>
+
+    <string name="you_both_said_yes">You both said yes to:</string>
+    <string name="no_matching">You ran out of places without matching!</string>
+    <string name="you_picked">You picked:</string>
+    <string name="they_picked">They picked:</string>
+    <string name="matching_alone">You said yes to:</string>
+    <string name="no_matching_alone">You ran out of places without saying yes to any restaurant!</string>
 
 
 

@@ -175,7 +175,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:elevation="12dp"
-            android:id="@+id/middleCardView"
+            android:id="@+id/rowCV"
             app:cardCornerRadius="150dp"
             >
             <ImageView
@@ -190,7 +190,7 @@
             tools:text="test"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/middleCardView"
+            app:layout_constraintTop_toBottomOf="@id/rowCV"
             style="@style/titleText"
             android:textColor="@color/middleBlue"
 

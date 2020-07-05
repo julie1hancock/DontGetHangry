@@ -11,7 +11,6 @@ import com.airbnb.epoxy.*
 import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.models.Restaurant
 import kotlinx.android.synthetic.main.model_restaurant_row.view.*
-import kotlinx.android.synthetic.main.model_toolbar.view.*
 import kotlinx.android.synthetic.main.model_toolbar.view.image
 
 @EpoxyModelClass(layout = R.layout.model_restaurant_row)
