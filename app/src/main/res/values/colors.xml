@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--    TODO: cleanup-->
 <resources>
+    <color name="charcoal">#454a4c</color>
+    <color name="charcoalLight3">#c1c2c3</color>
+
+
+    <color name="sunflower">#dbb238</color>
+    <color name="pond">#66b3b3</color>
+    <color name="rose">#fdb6a3</color>
+    <color name="leaf">#73b507</color>
+    <color name="fruit">#b05449</color>
+    <color name="earth">#d2b48c</color>
+    <color name="offwhite">#f9f9f9</color>
+
+
+
+
+
+
+
+
     <color name="colorPrimary">#2c5174</color>
     <color name="colorPrimaryDark">#1c222b</color>
     <color name="colorAccent">#aacfda</color>
@@ -19,7 +38,7 @@
     <color name="lightBlue">#aacfda</color>
 
     <color name="line">#d8dbe3</color>
-    <color name="offwhite">#eeeeee</color>
+<!--    <color name="offwhite">#eeeeee</color>-->
 
     <color name="mutedGreen">#8fde8f</color>
     <color name="mutedRed">#ffb2b2</color>

@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.models.epoxy
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.epoxy.*
 import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.models.Restaurant
+import hancock.julie.dontgethangry.models.createPostfix
 import kotlinx.android.synthetic.main.model_restaurant_row.view.*
 import kotlinx.android.synthetic.main.model_toolbar.view.image
 
@@ -29,7 +30,9 @@ abstract class RestaurantRowModel: EpoxyModelWithHolder<RestaurantRowModel.Resta
             holder.address.text = it.getDisplayAddress()
             holder.milesAway.text = it.getDisplayMilesAway()
             holder.root.setOnClickListener{ view->
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=${createPostfix(it.address)}"))
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=${createPostfix(
+                    it.address
+                )}"))
                 context?.startActivity(intent)
             }
         }

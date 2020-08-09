@@ -7,7 +7,7 @@
         android:id="@+id/line"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:background="@color/charcoalLight3"
+        android:background="@color/midDarkBlue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,10 +1,11 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.models.epoxy
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.airbnb.epoxy.*
 import hancock.julie.dontgethangry.R
+import hancock.julie.dontgethangry.models.setVisibility
 import kotlinx.android.synthetic.main.model_toolbar.view.*
 
 @EpoxyModelClass(layout = R.layout.model_toolbar)

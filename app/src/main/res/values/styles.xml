@@ -1,5 +1,29 @@
 <resources>
 
+    <style name="BigButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:layout_marginStart">@dimen/dimen_two_and_quarter</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_two_and_quarter</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Text4">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/charcoal</item>
+<!--        <item name="android:font">Roboto</item>-->
+    </style>
+
+
+
+
+
+
     <style name="match">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -128,7 +152,7 @@ undo
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">110dp</item>
-        <item name="android:background">@drawable/btn</item>
+        <item name="android:background">@drawable/btn_old</item>
         <item name="android:padding">16dp</item>
         <item name="android:textColor">@color/offwhite</item>
 <!--        <item name="android:text">Start Over</item>-->

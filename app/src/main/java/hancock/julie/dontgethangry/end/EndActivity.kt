@@ -7,6 +7,7 @@ import com.airbnb.epoxy.EpoxyModel
 import hancock.julie.dontgethangry.R
 import hancock.julie.dontgethangry.decisions.DecisionActivity
 import hancock.julie.dontgethangry.models.Singleton
+import hancock.julie.dontgethangry.models.epoxy.*
 import kotlinx.android.synthetic.main.activity_end.*
 
 class EndActivity : AppCompatActivity() {
@@ -23,7 +24,13 @@ class EndActivity : AppCompatActivity() {
 
     private fun setupView() {
         models = mutableListOf()
-        models.add(createToolbarModel(topText = presentation.getTitle(resources), bottomText = presentation.getSubtitle(resources)))
+        models.add(
+            createToolbarModel(
+                topText = presentation.getTitle(
+                    resources
+                ), bottomText = presentation.getSubtitle(resources)
+            )
+        )
 
         if(Singleton.diningAlone) setupDiningAloneModels()
         else setupDiningTogetherModels()
@@ -40,22 +47,61 @@ class EndActivity : AppCompatActivity() {
 
     private fun setupDiningTogetherModels() {
         if (presentation.hangerAvoided()) {
-            models.add(createTextViewModel(resources.getString(R.string.you_both_said_yes)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.you_both_said_yes
+                    )
+                )
+            )
             presentation.getOverlapping().forEach {
-                models.add(createRestaurantRowModel(it, this@EndActivity))
+                models.add(
+                    createRestaurantRowModel(
+                        it,
+                        this@EndActivity
+                    )
+                )
                 models.add(createLineModel(id = it.hashCode().toString()))
             }
         } else {
-            models.add(createTextViewModel(resources.getString(R.string.no_matching)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.no_matching
+                    )
+                )
+            )
             models.add(createLineModel(id = "together_line"))
-            models.add(createTextViewModel(resources.getString(R.string.you_picked)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.you_picked
+                    )
+                )
+            )
             Singleton.youPicked.forEach {
-                models.add(createRestaurantRowModel(it, this@EndActivity))
+                models.add(
+                    createRestaurantRowModel(
+                        it,
+                        this@EndActivity
+                    )
+                )
                 models.add(createLineModel(id = it.hashCode().toString()))
             }
-            models.add(createTextViewModel(resources.getString(R.string.they_picked)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.they_picked
+                    )
+                )
+            )
             Singleton.theyPicked.forEach {
-                models.add(createRestaurantRowModel(it, this@EndActivity))
+                models.add(
+                    createRestaurantRowModel(
+                        it,
+                        this@EndActivity
+                    )
+                )
                 models.add(createLineModel(id = it.hashCode().toString()))
             }
         }
@@ -63,14 +109,31 @@ class EndActivity : AppCompatActivity() {
 
     private fun setupDiningAloneModels() {
         if (presentation.hangerAvoided()) {
-            models.add(createTextViewModel(resources.getString(R.string.matching_alone)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.matching_alone
+                    )
+                )
+            )
             models.add(createLineModel("alone_line"))
             Singleton.youPicked.forEach {
-                models.add(createRestaurantRowModel(it, this@EndActivity))
+                models.add(
+                    createRestaurantRowModel(
+                        it,
+                        this@EndActivity
+                    )
+                )
                 models.add(createLineModel(id = it.hashCode().toString()))
             }
         } else {
-            models.add(createTextViewModel(resources.getString(R.string.no_matching_alone)))
+            models.add(
+                createTextViewModel(
+                    resources.getString(
+                        R.string.no_matching_alone
+                    )
+                )
+            )
         }
     }
 

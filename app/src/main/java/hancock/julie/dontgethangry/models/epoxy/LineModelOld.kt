@@ -1,13 +1,13 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.models.epoxy
 
 import android.content.Context
 import android.view.View
 import com.airbnb.epoxy.*
 import hancock.julie.dontgethangry.R
-import kotlinx.android.synthetic.main.model_line.view.*
+import kotlinx.android.synthetic.main.model_line_old.view.*
 
-@EpoxyModelClass(layout = R.layout.model_line)
-abstract class LineModel: EpoxyModelWithHolder<LineModel.LineHolder>() {
+@EpoxyModelClass(layout = R.layout.model_line_old)
+abstract class LineModelOld: EpoxyModelWithHolder<LineModelOld.LineHolder>() {
 
     @EpoxyAttribute
     var color: Int? = null
@@ -39,9 +39,10 @@ fun createLineModel(
     color: Int? = null,
     thickness: Int? = null
 ): EpoxyModel<*> {
-    return LineModel_()
-        .id(id)
-        .color(color)
-        .thickness(thickness)
-        .context(context)
+    TODO()
+//    return LineModel_()
+//        .id(id)
+//        .color(color)
+//        .thickness(thickness)
+//        .context(context)
 }

@@ -1,12 +1,12 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.models.epoxy
 
 import android.view.View
 import android.widget.TextView
 import com.airbnb.epoxy.*
 import hancock.julie.dontgethangry.R
-import kotlinx.android.synthetic.main.model_text.view.*
+import kotlinx.android.synthetic.main.model_text_old.view.*
 
-@EpoxyModelClass(layout = R.layout.model_text)
+@EpoxyModelClass(layout = R.layout.model_text_old)
 abstract class TextViewModel: EpoxyModelWithHolder<TextViewModel.TextViewHolder>() {
 
     @EpoxyAttribute

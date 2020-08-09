@@ -1,4 +1,4 @@
-package hancock.julie.dontgethangry.end
+package hancock.julie.dontgethangry.models.epoxy
 
 import android.view.View
 import android.widget.Button
