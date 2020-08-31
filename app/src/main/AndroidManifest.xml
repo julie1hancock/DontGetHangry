@@ -29,7 +29,12 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".end.EndActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-
+        <activity android:name=".start.JoinDecisionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".start.NameActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".start.CreateDecisionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
 
 
@@ -54,8 +59,6 @@
         <activity android:name="hancock.julie.dontgethangry.old.views.InstructionActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="hancock.julie.dontgethangry.old.views.WelcomeActivity" />
-        <activity android:name=".start.CreateDecisionActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 

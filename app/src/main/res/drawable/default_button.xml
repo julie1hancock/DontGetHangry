@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gray shadow. -->
+    <item android:left="2dp" android:top="3dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/charcoalLight3" />
+        </shape>
+    </item>
+    <!-- White foreground. -->
+    <item android:bottom="3dp" android:right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/sunflower" />
+        </shape>
+    </item>
+<!--    <item android:drawable="@drawable/ic_undo_trim_foreground"/>-->
+
+</layer-list>

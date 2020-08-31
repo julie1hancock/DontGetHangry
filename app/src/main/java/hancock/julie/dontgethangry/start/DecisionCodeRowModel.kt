@@ -19,11 +19,13 @@ abstract class DecisionCodeRowModel: EpoxyModelWithHolder<DecisionCodeRowModel.D
 
     @SuppressLint("SetTextI18n")
     override fun bind(holder: DecisionCodeRowHolder) {
-        holder.view0.setText(string.toString()[0] + "")
-        holder.view1.setText(string.toString()[1] + "")
-        holder.view2.setText(string.toString()[2] + "")
-        holder.view3.setText(string.toString()[3] + "")
-        holder.view4.setText(string.toString()[4] + "")
+        if(string != null && string!!.length >= 6) {
+            holder.view0.setText(string.toString()[0] + "")
+            holder.view1.setText(string.toString()[1] + "")
+            holder.view2.setText(string.toString()[2] + "")
+            holder.view3.setText(string.toString()[3] + "")
+            holder.view4.setText(string.toString()[4] + "")
+        }
         if(edit == true) {
             holder.view0.isFocusable = true
             holder.view1.isFocusable = true
@@ -58,7 +60,7 @@ abstract class DecisionCodeRowModel: EpoxyModelWithHolder<DecisionCodeRowModel.D
 
 fun createDecisionCodeRow(
     edit: Boolean,
-    string: String
+    string: String = ""
 ): EpoxyModel<*> {
     return DecisionCodeRowModel_()
         .id(string.hashCode())

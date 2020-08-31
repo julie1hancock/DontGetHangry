@@ -6,8 +6,7 @@ import hancock.julie.dontgethangry.R
 import kotlinx.android.synthetic.main.activity_epoxy.*
 import kotlinx.android.synthetic.main.toolbar.view.*
 
-class StartActivity : AppCompatActivity() {
-
+class NameActivity : AppCompatActivity() {
     //todo inject
     lateinit var presenter: StartPresentation
     lateinit var coordinator: StartCoordination
@@ -18,7 +17,9 @@ class StartActivity : AppCompatActivity() {
         toolbar.toolbarTitle.text = getString(R.string.welcome)
         presenter = StartPresenter()
         coordinator = StartCoordinator()
-        epoxyRv.setModels(presenter.generateEpoxyModelsForStart(this, coordinator))
+        epoxyRv.setModels(presenter.generateEpoxyModelsForName(
+            context = this,
+            coordinator = coordinator
+        ))
     }
 }
-

@@ -6,7 +6,7 @@ import hancock.julie.dontgethangry.R
 import kotlinx.android.synthetic.main.activity_epoxy.*
 import kotlinx.android.synthetic.main.toolbar.view.*
 
-class StartActivity : AppCompatActivity() {
+class JoinDecisionActivity : AppCompatActivity() {
 
     //todo inject
     lateinit var presenter: StartPresentation
@@ -15,10 +15,13 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_epoxy)
-        toolbar.toolbarTitle.text = getString(R.string.welcome)
+        toolbar.toolbarTitle.text = getString(R.string.join_decision_group)
         presenter = StartPresenter()
         coordinator = StartCoordinator()
-        epoxyRv.setModels(presenter.generateEpoxyModelsForStart(this, coordinator))
+        epoxyRv.setModels(presenter.generateEpoxyModelsForDecision(
+            context = this,
+            isCreate = false,
+            coordinator = coordinator
+        ))
     }
 }
-

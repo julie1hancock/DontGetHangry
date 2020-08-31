@@ -19,7 +19,6 @@
 
 
 
-<!--    old-->
     <string name="app_name">Don\'t Get Hangry</string>
     <string name="title_activity_picking">Don\'t Get Hangry</string>
     <string name="welcome">Welcome!</string>
@@ -27,9 +26,15 @@
     <string name="join_decision">Join a decision</string>
     <string name="dine_alone">Dine alone</string>
     <string name="create_decision_group">Create Decision Group</string>
+    <string name="join_decision_group">Join Decision Group</string>
     <string name="decision_code">Decision code</string>
     <string name="share_code">Share your code to let others join your decision.</string>
     <string name="everyone_has_joined">Everyone has joined</string>
     <string name="join_decision_instead">Join decision instead</string>
-    <string name="waiting_for_others">Waiting for others to join the decision...</string>
+    <string name="create_decision_instead">Create decision instead</string>
+    <string name="waiting_for_others">Waiting for others to join the decision…</string>
+    <string name="ask_for_decision">Ask your decision leader for the decision code</string>
+    <string name="whats_your_name">What\'s your name?</string>
+
+
 </resources>
